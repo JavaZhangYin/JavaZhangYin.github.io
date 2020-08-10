@@ -251,6 +251,36 @@
             </div>
 
             
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    function loadGitalk(){
+      addScript('https://cdn.staticfile.org/gitalk/1.6.2/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: 'fb5697e5b27d011d9c63',
+          clientSecret: 'b0b1b9480a5e9377c6e49156d08d62d263287de3',
+          repo: 'JavaZhangYin.github.io',
+          owner: 'JavaZhangYin',
+          admin: 'JavaZhangYin',
+          id: 'abe2f11339bee105f3f102052ebaa0c7',
+          language: 'zh-CN',
+          perPage: 15,
+          pagerDirection: 'last',
+          createIssueManually: 'true',
+          distractionFreeMode: 'false'
+        });
+        gitalk.render('gitalk-container');
+      });
+    }
+    createObserver(loadGitalk, 'gitalk-container');
+  </script>
+
+
+              </div>
+            
           </div>
         </div>
       </div>
