@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>使用hexo搭建博客</title>
+    <link href="/2020/08/10/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2020/08/10/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="Hexo介绍"><a href="#Hexo介绍" class="headerlink" title="Hexo介绍"></a>Hexo介绍</h2><blockquote><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p></blockquote><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>安装<a href="https://git-scm.com/">GIT</a></li><li>安装<a href="https://nodejs.org/en/">node.js</a></li></ul><h2 id="安装及初始化Hexo"><a href="#安装及初始化Hexo" class="headerlink" title="安装及初始化Hexo"></a>安装及初始化Hexo</h2><p>安装Hexo:</p><pre><code class="hljs avrasm">npm install -g hexo-<span class="hljs-keyword">cli</span></code></pre><p>初始化Hexo</p><pre><code class="hljs jboss-cli">hexo init F:<span class="hljs-string">/Hexo</span>  <span class="hljs-params">(注：任意一个空文件夹的位置即可)</span><span class="hljs-keyword">cd</span> F:<span class="hljs-string">/Hexo</span> npm install</code></pre><p>清除原有数据避免未知错误</p><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span></code></pre><p>生成静态页</p><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span></code></pre><p>启动服务</p><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo s</span></code></pre><p>打开浏览器访问<a href="http://localhost:4000/%E5%8D%B3%E5%8F%AF%E8%AE%BF%E9%97%AE">http://localhost:4000/</a> 即可访问</p><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>在hexo官网中有很多模板可以选择，只需要把相应模板通过git clone到我们hexo 初始化的文件夹</p><p>官网主题地址:<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p><p>修改初始化文件夹下的 _config.yml 文件</p><p>知乎推荐主题：<a href="https://www.zhihu.com/question/39388850/answer/799085183">https://www.zhihu.com/question/39388850/answer/799085183</a></p><p>本案例使用主题：<a href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p><pre><code class="hljs avrasm"><span class="hljs-symbol">theme:</span> fluid</code></pre><p>修改成为指定的主题名称即可。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>在码云中建立一个项目（最好与用户名相同，这样可以直接访问。）</p><blockquote><p>如果你想你的 pages 首页访问地址不带二级目录，如ipvb.gitee.io，<strong>你需要建立一个与自己个性地址同名的项目</strong>，如 <a href="https://gitee.com/ipvb">https://gitee.com/ipvb</a> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以<code>ipvb.oschina.io</code>直接访问，那么他就可以创建一个名字为<code>ipvb</code>的项目 <a href="https://gitee.com/ipvb/ipvb">https://gitee.com/ipvb/ipvb</a> 部署完成后，就可以以 <a href="https://ipvb.gitee.io/">https://ipvb.gitee.io</a> 进行访问了。</p></blockquote><blockquote><p>当需要部署的项目和自己的个性地址不一致时，如：<a href="https://gitee.com/ipvb/blog">https://gitee.com/ipvb/blog</a> ，生成的pages url 为 <a href="https://ipvb.gitee.io/blog">https://ipvb.gitee.io/blog</a> ，而访问的资源404，如 <a href="https://ipvb.gitee.io/style.css">https://ipvb.gitee.io/style.css</a> 。这是因为相应配置文件的相对路径存在问题导致的，生成的资源 url 应该为 <a href="https://ipvb.gitee.io/blog/style.css">https://ipvb.gitee.io/blog/style.css</a> 才对。对于不同的静态资源生成器，配置如下：</p><p>Hexo 配置文件_config.yml的url和root修改如下：</p></blockquote><p>在github上部署</p><p>和码云类似 但是只支持自己的 <code>github账号名称</code>+<code>github.io</code> </p><p>在config文件中 添加</p><pre><code class="hljs less"><span class="hljs-attribute">deploy</span>:  <span class="hljs-attribute">type</span>: git  <span class="hljs-attribute">repo</span>: <span class="hljs-attribute">https</span>:<span class="hljs-comment">//github.com/JavaZhangYin/JavaZhangYin.github.io.git</span></code></pre><p>使用命令</p><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d</span></code></pre><p>进行上传 </p><p><a href="https://pages.github.com/">https://pages.github.com/</a></p><h2 id="编写文章"><a href="#编写文章" class="headerlink" title="编写文章"></a>编写文章</h2><p>使用命令</p><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;新建文章的名字&quot;</span></code></pre><p>打开目录 <code>source\_posts</code> 可以查看到刚刚新建文章的文件</p><p>打开之后</p><pre><code class="hljs subunit">title: 标题date: 时间<span class="hljs-keyword">tags:</span> - 标签1- 标签2categories:- 分类1- 分类2</code></pre><p>根据自己书写的内容添加标签 <em>tags</em> 和分类 <em>categories</em></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>博客搭建</tag>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我的第一个博客</title>
     <link href="/2020/08/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
     <url>/2020/08/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
@@ -20,9 +47,9 @@
     
     <tags>
       
-      <tag>测试</tag>
-      
       <tag>hexo</tag>
+      
+      <tag>测试</tag>
       
     </tags>
     
